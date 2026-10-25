@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#6757d9">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Моя школа">
+  <meta name="description" content="Умная школа AI — учебный помощник для 4-го класса">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Умная школа AI</title>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">У</span><div><strong>Умная школа AI</strong><small>Мой 4-й класс</small></div></div>
+      <button id="installButton" class="ghost" hidden>Установить</button>
+    </header>
+
+    <section class="hero">
+      <span class="eyebrow">Твой личный помощник в учёбе</span>
+      <h1>Давай разберёмся вместе</h1>
+      <p>Выбери тему, напиши вопрос или поговори с учителем голосом.</p>
+      <div class="mode-switch" role="group" aria-label="Режим обучения">
+        <button class="mode active" data-mode="program">По программе</button>
+        <button class="mode" data-mode="free">Свободное обучение</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="subjects-title">
+      <div class="section-title"><div><span>Сегодня</span><h2 id="subjects-title">Выбери предмет</h2></div><span class="streak">🔥 3 дня подряд</span></div>
+      <div class="subjects">
+        <button class="subject selected" data-subject="Математика"><span>➗</span><strong>Математика</strong><small>Деление столбиком</small></button>
+        <button class="subject" data-subject="Русский язык"><span>✍️</span><strong>Русский язык</strong><small>Части речи</small></button>
+        <button class="subject" data-subject="Английский язык"><span>🌍</span><strong>Английский</strong><small>My day</small></button>
+        <button class="subject" data-subject="Окружающий мир"><span>🌱</span><strong>Окружающий мир</strong><small>Природные зоны</small></button>
+      </div>
+    </section>
+
+    <section class="teacher" aria-labelledby="teacher-title">
+      <div class="teacher-head">
+        <div class="avatar">АИ</div>
+        <div><span class="online">● на связи</span><h2 id="teacher-title">Спросить учителя</h2></div>
+      </div>
+      <div id="conversation" class="conversation" aria-live="polite">
+        <div class="message teacher-message">Привет! Я помогу разобраться с темой. Попробуй спросить: «Объясни деление столбиком».</div>
+      </div>
+      <form id="questionForm" class="ask-row">
+        <label class="sr-only" for="question">Вопрос учителю</label>
+        <input id="question" autocomplete="off" placeholder="Напиши свой вопрос…">
+        <button id="micButton" class="mic" type="button" aria-label="Задать вопрос голосом">🎙️</button>
+        <button class="send" type="submit" aria-label="Отправить">➜</button>
+      </form>
+      <p id="voiceStatus" class="status">Голосовой режим работает в поддерживаемых браузерах и требует разрешения на микрофон.</p>
+    </section>
+
+    <section class="notice">
+      <strong>Демонстрационная версия</strong>
+      <p>Сейчас учитель знает несколько подготовленных тем. Полноценный ИИ будет подключён позже через защищённый сервер.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
